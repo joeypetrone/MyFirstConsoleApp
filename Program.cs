@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 
 namespace MyFirstConsoleApp
 {
@@ -40,8 +41,8 @@ namespace MyFirstConsoleApp
                        csharp is great,
                        and so are you.";
 
-            var name = "Joey";
-            var age = 38;
+            var name = "Nathan";
+            var age = 34;
             //string interpolation, like javascript, but different. :)
             var greeting = $"My name is {name} and I'm {age} years old";
 
@@ -71,6 +72,70 @@ namespace MyFirstConsoleApp
             //names[10] = "Nathan";
 
             Console.WriteLine(myNumber);
+
+
+            var shouldExecute = true;
+
+            if (!string.IsNullOrEmpty(greeting))
+            {
+                Console.WriteLine($"{name} was in the name variable." );
+            }
+            
+            switch (oneCharacter)
+            {
+                case 'a':
+                case 'b':
+                    Console.WriteLine("It's the letter a");
+                    break;
+                case 'c':
+                    Console.WriteLine("Duh it's c");
+                    break;
+                default :
+                    Console.WriteLine("It wasn't a or c");
+                    break;
+            }
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                if ( i < 3 )
+                {
+                    continue;
+                }
+
+                Console.WriteLine($"The current name is {names[i]}");
+            }
+
+            foreach (var n in names)
+            {
+                Console.WriteLine($"The current name is {n}");
+            }
+
+            while (false)
+            {
+                Console.WriteLine("Hey");
+                if (DateTime.Now > new DateTime(2020, 7, 27, 19, 25, 15))
+                {
+                    break;
+                }
+            }
+
+
+            Console.WriteLine("Please enter your name.");
+            var input = Console.ReadLine();
+
+            Console.WriteLine($"Hello, {input}");
+
+            Console.WriteLine("Please enter your a comma separated list of numbers.");
+            input = Console.ReadLine();
+
+            var numbers = input.Split(',');
+
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+            
+
         }
     }
 }
