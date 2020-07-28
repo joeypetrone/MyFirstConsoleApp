@@ -40,8 +40,8 @@ namespace MyFirstConsoleApp
                        csharp is great,
                        and so are you.";
 
-            var name = "Joey";
-            var age = 38;
+            var name = "Nathan";
+            var age = 34;
             //string interpolation, like javascript, but different. :)
             var greeting = $"My name is {name} and I'm {age} years old";
 
@@ -71,6 +71,39 @@ namespace MyFirstConsoleApp
             //names[10] = "Nathan";
 
             Console.WriteLine(myNumber);
+
+
+            var shouldExecute = true;
+
+            if (!string.IsNullOrEmpty(greeting))
+            {
+                Console.WriteLine($"{name} was in the name variable." );
+            }
+            
+            switch (oneCharacter)
+            {
+                case 'a':
+                case 'b':
+                    Console.WriteLine("It's the letter a");
+                    break;
+                case 'c':
+                    Console.WriteLine("Duh it's c");
+                    break;
+                default :
+                    Console.WriteLine("It wasn't a or c");
+                    break;
+            }
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                Console.WriteLine($"The current name is {names[i]}");
+            }
+
+            foreach (var n in names)
+            {
+                Console.WriteLine($"The current name is {n}");
+            }
+
         }
     }
 }
