@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 
 namespace MyFirstConsoleApp
 {
@@ -96,6 +97,11 @@ namespace MyFirstConsoleApp
 
             for (int i = 0; i < names.Length; i++)
             {
+                if ( i < 3 )
+                {
+                    continue;
+                }
+
                 Console.WriteLine($"The current name is {names[i]}");
             }
 
@@ -103,6 +109,32 @@ namespace MyFirstConsoleApp
             {
                 Console.WriteLine($"The current name is {n}");
             }
+
+            while (false)
+            {
+                Console.WriteLine("Hey");
+                if (DateTime.Now > new DateTime(2020, 7, 27, 19, 25, 15))
+                {
+                    break;
+                }
+            }
+
+
+            Console.WriteLine("Please enter your name.");
+            var input = Console.ReadLine();
+
+            Console.WriteLine($"Hello, {input}");
+
+            Console.WriteLine("Please enter your a comma separated list of numbers.");
+            input = Console.ReadLine();
+
+            var numbers = input.Split(',');
+
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+            
 
         }
     }
